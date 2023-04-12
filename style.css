@@ -77,7 +77,7 @@ button:hover {
     border-top: 4px solid #8abd68;
 }
 
-#batery.discharging {
+#battery.discharging {
     border-top: 4px solid #deab5f;
 }
 
