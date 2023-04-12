@@ -1,0 +1,110 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: 'Iosevka Nerd Font';
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: rgba(28, 22, 24, 0.75);
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: #8f98a5;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+    border-top: none;
+}
+
+#workspaces button.active {
+    border-top: 4px solid #8abd68;
+}
+
+#workspaces button.urgent {
+    border-top: 4px solid #d04c4c;
+}
+
+#clock,
+#battery,
+#network,
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+#clock {
+    background-color: inherit;
+}
+
+#battery {
+    background-color: inherit;
+    color: #cccacb;
+}
+
+#battery.charging, #battery.plugged, #battery.full {
+    border-top: 4px solid #8abd68;
+}
+
+#batery.discharging {
+    border-top: 4px solid #deab5f;
+}
+
+@keyframes blink {
+    to {
+        background-color: #cccacb;
+        color: #1c1618;
+    }
+}
+
+#battery.critical:not(.charging) {
+    border-top: 4px solid #d04c4c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #1c1618;
+}
+
+#network {
+    border-top: 4px solid #8abd68;
+}
+
+#network.disconnected {
+    border-top: 4px solid #d04c4c;
+}
