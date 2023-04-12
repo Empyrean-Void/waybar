@@ -1,0 +1,2 @@
+# waybar
+Waybar dotfiles
