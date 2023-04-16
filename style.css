@@ -5,13 +5,16 @@
 }
 
 window#waybar {
-    background-color: rgba(28, 22, 24, 0.75);
+    background-color: #190c0e;
     transition-property: background-color;
     transition-duration: .5s;
+    color: #eeedf0;
+    border-radius: 5px;
 }
 
 window#waybar.hidden {
     opacity: 0.2;
+    color: #eeedf0;
 }
 
 button {
@@ -28,21 +31,37 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: calc(5px - 4px) 5px;
     background-color: transparent;
+    color: #eeedf0;
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
     border-top: none;
+    color: #eeedf0;
 }
 
 #workspaces button.active {
-    border-top: 4px solid #8abd68;
+    border-top: 5px solid #8abd68;
+    color: #eeedf0;
+}
+
+#workspaces button.active:first-child {
+    border-top: 5px solid #8abd68;
+    border-radius: 5px 0 0 0;
+    color: #eeedf0;
 }
 
 #workspaces button.urgent {
-    border-top: 4px solid #d04c4c;
+    border-top: 5px solid #e02f1b;
+    color: #eeedf0;
+}
+
+#workspaces button.urgent:first-child {
+    border-top: 5px solid #e02f1b;
+    border-radius: 5px 0 0 0;
+    color: #eeedf0;
 }
 
 #clock,
@@ -66,30 +85,33 @@ button:hover {
 
 #clock {
     background-color: inherit;
+    color: #eeedf0;
 }
 
 #battery {
     background-color: inherit;
-    color: #cccacb;
+    color: #eeedf0;
 }
 
 #battery.charging, #battery.plugged, #battery.full {
-    border-top: 4px solid #8abd68;
+    border-top: 5px solid #8abd68;
+    color: #eeedf0;
 }
 
 #battery.discharging {
-    border-top: 4px solid #deab5f;
+    border-top: 5px solid #deab5f;
+    color: #eeedf0;
 }
 
 @keyframes blink {
     to {
-        background-color: #cccacb;
-        color: #1c1618;
+        background-color: #eeedf0;
+        color: #190c0e;
     }
 }
 
 #battery.critical:not(.charging) {
-    border-top: 4px solid #d04c4c;
+    border-top: 5px solid #e02f1b;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -98,13 +120,15 @@ button:hover {
 }
 
 label:focus {
-    background-color: #1c1618;
+    background-color: #190c0e;
 }
 
 #network {
-    border-top: 4px solid #8abd68;
+    border-top: 5px solid #8abd68;
+    color: #eeedf0;
 }
 
 #network.disconnected {
-    border-top: 4px solid #d04c4c;
+    border-top: 5px solid #e02f1b;
+    color: #eeedf0;
 }
